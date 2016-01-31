@@ -1,5 +1,5 @@
 class AddTypeToItems < ActiveRecord::Migration
-  def up
+  def change
     add_column :items, :type, :string
   end
 end
