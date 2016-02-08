@@ -1,3 +1,22 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#index {
+	text-align: center;
+}
+
+#itemstable {
+	max-width: 80%;
+	min-width: 20%;
+	text-align: left;
+}
+
+#itemstable td, th {
+	padding: 2px;
+	padding-right: 20px;
+}
+
+#new {
+	text-align: center;
+}

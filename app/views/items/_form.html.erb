@@ -1,0 +1,50 @@
+<%= form_for @item do |f| %>
+ 
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@item.errors.count, "error") %> prohibited
+        this item from being saved:
+      </h2>
+      <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text, size: "28" %>
+  </p>
+
+  <%# Source for below: http://stackoverflow.com/questions/746387/labels-for-radio-buttons-in-rails-form %>
+  <p>
+    <%= f.radio_button :category, 'Clothing' %>
+    <%= f.label :category, 'Clothing', :value=> 'Clothing' %><br>
+    <%= f.radio_button :category, 'Sleep System' %>
+    <%= f.label :category, 'Sleep System', :value=> 'Sleep System' %><br>
+    <%= f.radio_button :category, 'Shelter' %>
+    <%= f.label :category, 'Shelter', :value=> 'Shelter' %><br>
+    <%= f.radio_button :category, 'Kitchen-Hydration' %>
+    <%= f.label :category, 'Kitchen-Hydration', :value=> 'Kitchen-Hydration' %><br>
+    <%= f.radio_button :category, 'First Aid-Hygiene' %>
+    <%= f.label :category, 'First Aid-Hygiene', :value=> 'First Aid-Hygiene' %><br>
+    <%= f.radio_button :category, 'Technical Gear' %>
+    <%= f.label :category, 'Technical Gear', :value=> 'Technical Gear' %><br>
+    <%= f.radio_button :category, 'Misc' %>
+    <%= f.label :category, 'Misc', :value=> 'Misc' %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', items_path %>

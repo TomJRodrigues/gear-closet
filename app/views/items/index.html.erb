@@ -1,19 +1,28 @@
-<h1>Your Gear Closet</h1>
+<div id="index" class="container">
+	<div class="jumbotron">
+		<h1>Your Gear Closet</h1>
 
-<%= link_to 'New Item', new_item_path %>
+		<%= link_to 'New Item', new_item_path %>
 
-<table align="center">
-	<tr>
-		<th>Title</th>
-		<th>Text</th>
-		<th>Category</th>
-	</tr>
+		<table id="itemstable" align="center">
+		  <tr>
+			  <th>Title</th>
+			  <th>Text</th>
+			  <th>Category</th>
+		  </tr>
 
-	<% @items.each do |item| %>
-		<tr>
-			<td><%= item.title %></td>
-			<td><%= item.text %></td>
-			<td><%= item.category %></td>
-		</tr>
-	<% end %>
-</table>
+		  <% @items.each do |item| %>
+			<tr>
+			  <td><%= item.title %></td>
+			  <td><%= item.text %></td>
+			  <td><%= item.category %></td>
+				<td><%= link_to 'Show', item_path(item) %></td>
+      	<td><%= link_to 'Edit', edit_item_path(item) %></td>
+      	<td><%= link_to 'Destroy', item_path(item),
+      					method: :delete,
+      					data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+		  <% end %>
+		</table>
+	</div>
+</div>
