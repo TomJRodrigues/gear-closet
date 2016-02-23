@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
  
+  get 'static_pages/help'
+
+  get 'static_pages/about'
+
+  get 'static_pages/contact'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -8,6 +14,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   Rails.application.routes.draw do
     
+  get 'static_pages/help'
+
+  get 'static_pages/about'
+
+  get 'static_pages/contact'
+
     resources :items
   
     root 'welcome#index'

@@ -1,15 +1,27 @@
-<p>
-	<strong>Title:</strong>
-	<%= @item.title %>
-</p>
+<div id="show">
+	<div class="jumbotron">
+		<div id="showtable" class="center">
+			<p>
+				<strong>Title:</strong>
+				<%= @item.title %>
+			</p>
 
-<p>
-	<strong>Text:</strong>
-	<%= @item.text %>
-</p>
+			<p>
+				<strong>Text:</strong>
+				<%= @item.text %>
+			</p>
 
-<p>
-	<strong>Category:</strong>
-	<%= @item.category %>
+			<p>
+				<strong>Category:</strong>
+				<%= @item.category %>
+			</p>
+		</div>
 
-<%= link_to 'Back', items_path %>
+		<%= link_to 'Back', items_path %>
+		<%= link_to 'Edit', edit_item_path %>
+		<%= link_to 'Destroy', item_path,
+      					method: :delete,
+      					data: { confirm: 'Are you sure?' } %>
+
+	</div>
+</div>
