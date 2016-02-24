@@ -19,4 +19,22 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_select "title", "Contact | Gear Closet"
   end
 
+  test "should get home" do
+    get :home
+    assert_response :success
+    assert_select "title", "Home | Gear Closet"
+  end
+
+  test "should get signup" do
+    get :signup
+    assert_response :success
+    assert_select "title", "Sign Up | Gear Closet"
+  end
+
+  test "should get login" do
+    get :login
+    assert_response :success
+    assert_select "title", "Log In | Gear Closet"
+  end
+
 end
