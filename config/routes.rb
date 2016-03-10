@@ -18,7 +18,9 @@ get 'signup' => 'users#new'
 
 get 'login' => 'static_pages#login'
 
-resources :items
+#resources :items
+
+resources :users
 end
 
 # Example of regular route:
