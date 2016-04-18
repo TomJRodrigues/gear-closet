@@ -49,6 +49,8 @@ group :development, :test do
 end
 
 group :production do
+	# Uses Puma web server in place of WEBrick to handle more HTTP requests
+	gem 'puma', '3.1.0'
 
 end
 
