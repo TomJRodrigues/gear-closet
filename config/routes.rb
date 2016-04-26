@@ -14,10 +14,9 @@ get 'signup'		 => 'users#new'
 get 'login' 		 => 'sessions#new'
 post   'login'   => 'sessions#create'
 delete 'logout'  => 'sessions#destroy'
-
 # resources :items
-
 resources :users
+resources :account_activations, only: [:edit]
 end
 
 # Example of regular route:
