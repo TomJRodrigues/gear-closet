@@ -4,6 +4,10 @@
 # You can have the root of your site routed with "root"
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
 root 'static_pages#home'
 
 get 'sessions/new' 
@@ -17,6 +21,7 @@ delete 'logout'  => 'sessions#destroy'
 # resources :items
 resources :users
 resources :account_activations, only: [:edit]
+resources :password_resets, only: 		[:new, :create, :edit, :update]
 end
 
 # Example of regular route:
