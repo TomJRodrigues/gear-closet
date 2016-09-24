@@ -53,7 +53,9 @@ class User < ActiveRecord::Base
   # Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token
+    puts "tom says reset token assigned"
     update_columns(reset_digest:  User.digest(reset_token), reset_sent_at: Time.zone.now)
+    puts "tom says columns updated"
   end
 
   # Sends password reset email.
